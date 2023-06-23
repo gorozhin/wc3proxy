@@ -45,6 +45,11 @@ jobs:
         with:
           name: windows
           path: dist/wc3proxy.exe
+      - name: Upload wc3proxy-cli EXE
+        uses: actions/upload-artifact@v2
+        with:
+          name: windows
+          path: dist/wc3proxy-cli.exe
 
   release-task:
     name: Upload
