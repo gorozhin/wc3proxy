@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -exuo pipefail
 
+apt install libfuse2
+
 # cleanup
 rm -rf dist tmp ./cli/obj ./cli/bin ./*.AppImage ./*.zsync
 mkdir -p 'tmp' 'dist'
