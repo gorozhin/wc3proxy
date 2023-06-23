@@ -54,14 +54,6 @@ namespace Foole.WC3Proxy
                 Console.WriteLine("Usage: wc3proxy <ip> [version] [game]");
                 return;
             }
-            if (args.Length < 2) {
-                Array.Resize(ref args, 2);
-                args[1] = "1.26";
-            }
-            if (args.Length < 3) {
-                Array.Resize(ref args, 3);
-                args[2] = "TFT";
-            }
 
             IPHostEntry serverhost;
             
@@ -69,7 +61,7 @@ namespace Foole.WC3Proxy
             serverhost.HostName = args[0];
             serverhost.AddressList = new IPAddress[] {IPAddress.Parse(args[0])};
             byte version = 26;
-            bool expansion = args[2].ToLower() != "roc";
+            bool expansion = true;
 
             MainProxy mainform = new MainProxy(serverhost, version, expansion);
             mainform.CompilerWorkaround();
