@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Install libfuse
+        run: sudo apt-get install -y libfuse2
+
       - name: Build Linux AppImage
         run: ./scripts/build-linux-x64
       - name: Upload Linux AppImage
