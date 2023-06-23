@@ -56,7 +56,7 @@ namespace Foole.WC3Proxy
             }
             if (args.Length < 2) {
                 Array.Resize(ref args, 2);
-                args[1] = "1.28";
+                args[1] = "1.26";
             }
             if (args.Length < 3) {
                 Array.Resize(ref args, 3);
@@ -68,7 +68,7 @@ namespace Foole.WC3Proxy
             serverhost = new IPHostEntry();
             serverhost.HostName = args[0];
             serverhost.AddressList = new IPAddress[] {IPAddress.Parse(args[0])};
-            byte version = (byte)Math.Round((float.Parse(args[1]) - 1) * 100);
+            byte version = 26;
             bool expansion = args[2].ToLower() != "roc";
 
             MainProxy mainform = new MainProxy(serverhost, version, expansion);
